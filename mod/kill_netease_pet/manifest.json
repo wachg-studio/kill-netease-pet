@@ -1,0 +1,30 @@
+{
+    "format_version": 2,
+    "header": {
+        "description": "强制清除官方伙伴(netease:pet),防止其干扰测试。进入世界后自动生效。",
+        "min_engine_version": [
+            1,
+            18,
+            0
+        ],
+        "name": "Kill Netease Pet",
+        "uuid": "ec158a01-1053-4c8a-8d10-c9e272a9656e",
+        "version": [
+            0,
+            0,
+            1
+        ]
+    },
+    "modules": [
+        {
+            "description": "Kill Netease Pet",
+            "type": "data",
+            "uuid": "3d325f16-3008-4149-ba66-9a41e7f74d8a",
+            "version": [
+                0,
+                0,
+                1
+            ]
+        }
+    ]
+}
