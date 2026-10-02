@@ -48,11 +48,16 @@ MC Studio 更新测试端后文件被还原,重新跑一遍即可。
 - 发现 `engineTypeStr == "netease:pet"` 立即 `DestroyEntity`,失败则 0.2 秒后补刀;
 - 全程输出 `[KillNeteasePet]` 日志,便于在 MC Studio 日志中确认生效。
 
-安装方式任选其一:
+安装:
 
-- 复制整个 `kill_netease_pet` 文件夹到测试端数据目录
-  `%APPDATA%\MinecraftPE_Netease_Editor\games\com.netease\development_behavior_packs\`,然后在测试世界的"设置 → 行为包"里启用;
-- 或者把其中的 `killPetScript` 文件夹复制进你自己工程的行为包根目录(引擎会自动扫描加载,适合挂在常用工程里)。
+1. 从 [Releases](https://github.com/wachg-studio/kill-netease-pet/releases) 下载 `杀狐狸模组.zip`(或直接使用本仓库 `mod/kill_netease_pet/` 文件夹);
+2. 把 `kill_netease_pet` 整个文件夹复制到测试端数据目录
+   `%APPDATA%\MinecraftPE_Netease_Editor\games\com.netease\development_behavior_packs\`;
+3. 在测试世界的"设置 → 行为包"里启用 **Kill Netease Pet**,重新进入世界生效。
+
+> 不建议把 `killPetScript` 塞进普通 Addon 工程的行为包:实测普通 Addon 工程的行为包不一定被引擎扫描加载 Python 脚本,用上面的开发包方式最稳。
+
+**常见问题:狐狸隐形了,右键还能打开物品栏?** 伙伴背包是网易引擎的内置交互,只要 `netease:pet` 实体存在,右键就能打开——最小化定义只能去掉它的模型、贴图和碰撞,砍不掉交互。根治办法是让本模组生效把实体删掉:实体不存在,自然没有物品栏可开。如果 MC Studio 日志里没有 `[KillNeteasePet]`,说明模组没有被加载,请检查行为包是否已在世界设置中启用。
 
 ## 恢复狐狸
 
